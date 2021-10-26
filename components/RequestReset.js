@@ -1,5 +1,4 @@
 import { useMutation } from '@apollo/client';
-import { useRouter } from 'next/dist/client/router';
 import Link from 'next/link';
 import useForm from '../lib/useForm';
 import { requestResetMutation } from '../graphql/Mutations';
@@ -10,13 +9,10 @@ export default function RequestReset() {
   const { inputs, handleChange, resetForm } = useForm({
     email: '',
   });
-  const [requestReset, { data, loading, error }] = useMutation(
-    requestResetMutation,
-    {
-      variables: inputs,
-      // refetch the currently logged in user
-    }
-  );
+  const [requestReset, { data, error }] = useMutation(requestResetMutation, {
+    variables: inputs,
+    // refetch the currently logged in user
+  });
   async function handleSubmit(e) {
     e.preventDefault(); // stop the form from submitting
 

@@ -27,6 +27,7 @@ export default function DecrementCartItemQuantity({ id, quantity, disabled }) {
       disabled={loading}
       type="button"
       onClick={decrementCartItem}
+      // eslint-disable-next-line react/jsx-no-duplicate-props
       disabled={disabled}
       className="bg-white text-red-600 py-1 px-2 border-2 border-red-600 rounded disabled:opacity-20"
     >

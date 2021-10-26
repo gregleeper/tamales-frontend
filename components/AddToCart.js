@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useMutation } from '@apollo/client';
 import gql from 'graphql-tag';
 import { CURRENT_USER_QUERY } from './User';

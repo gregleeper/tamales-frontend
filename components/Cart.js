@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Fragment, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { XIcon } from '@heroicons/react/outline';
