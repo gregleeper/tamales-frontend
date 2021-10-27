@@ -5,6 +5,7 @@ import useForm from '../lib/useForm';
 import { signUpMutation } from '../graphql/Mutations';
 import { CURRENT_USER_QUERY } from './User';
 import Error from './ErrorMessage';
+import SuccessMessage from './SuccessMessage';
 
 export default function SignUp() {
   const router = useRouter();
@@ -47,12 +48,18 @@ export default function SignUp() {
         <Error error={error} />
         <fieldset>
           {data?.createUser && (
-            <p>
-              {`You've successfully signed up, ${data.createUser.name}. Now you can sign in! `}
-              <Link href="/sign-in">
-                <p className="text-green-600 text-lg underline">Sign In</p>
-              </Link>
-            </p>
+            <div className="py-4">
+              <SuccessMessage
+                title="Successful Signup!!"
+                message="Now you can sign in!"
+              >
+                <Link href="/sign-in">
+                  <p className="text-green-600 text-lg underline cursor-pointer hover:font-medium transition-transform druation-150 ease-in hover:-translate-x-1 hover:scale-95">
+                    Sign In
+                  </p>
+                </Link>
+              </SuccessMessage>
+            </div>
           )}
           <div className="rounded-md shadow-sm mb-2">
             <label htmlFor="name" className="sr-only">
