@@ -75,6 +75,7 @@ export default function SignUp() {
               autoComplete="name"
               value={inputs.name}
               onChange={handleChange}
+              required
             />
             <label htmlFor="email" className="sr-only">
               Email
@@ -89,6 +90,7 @@ export default function SignUp() {
               autoComplete="email"
               value={inputs.email}
               onChange={handleChange}
+              required
             />
 
             <label htmlFor="password" className="sr-only">
@@ -104,6 +106,7 @@ export default function SignUp() {
               className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-green-500 focus:border-green-500 focus:z-10 sm:text-sm"
               value={inputs.password}
               onChange={handleChange}
+              required
             />
             <label htmlFor="password" className="sr-only">
               Password
@@ -118,6 +121,7 @@ export default function SignUp() {
               className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-green-500 focus:border-green-500 focus:z-10 sm:text-sm"
               value={inputs.phone}
               onChange={handleChange}
+              required
             />
           </div>
           <button

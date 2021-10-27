@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { CheckCircleIcon } from '@heroicons/react/solid';
 
 export default function SuccessMessage({ title, message, children }) {
