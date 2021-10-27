@@ -12,10 +12,13 @@ export const signUpMutation = gql`
     $name: String!
     $password: String!
   ) {
-    createUser(data: { email: $email, name: $name, password: $password }) {
+    createUser(
+      data: { email: $email, name: $name, password: $password, phone: $phone }
+    ) {
       id
       email
       name
+      phone
     }
   }
 `;

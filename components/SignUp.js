@@ -60,7 +60,8 @@ export default function SignUp() {
             </label>
 
             <input
-              type="name"
+              type="text"
+              id="name"
               name="name"
               className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-green-500 focus:border-green-500 focus:z-10 sm:text-sm"
               placeholder="Full Name"
@@ -75,6 +76,7 @@ export default function SignUp() {
             <input
               type="email"
               name="email"
+              id="email"
               className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-green-500 focus:border-green-500 focus:z-10 sm:text-sm"
               placeholder="Email Address"
               autoComplete="email"
@@ -89,6 +91,7 @@ export default function SignUp() {
             <input
               type="password"
               name="password"
+              id="password"
               placeholder="Password"
               autoComplete="password"
               className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-green-500 focus:border-green-500 focus:z-10 sm:text-sm"
@@ -101,6 +104,7 @@ export default function SignUp() {
 
             <input
               type="text"
+              id="phone"
               name="phone"
               placeholder="Phone number: 6205551234"
               autoComplete="phone"
