@@ -11,6 +11,7 @@ export const signUpMutation = gql`
     $email: String!
     $name: String!
     $password: String!
+    $phone: String!
   ) {
     createUser(
       data: { email: $email, name: $name, password: $password, phone: $phone }
