@@ -1,37 +1,21 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import 'tailwindcss/tailwind.css';
-import {
-  ApolloProvider,
-  ApolloClient,
-  createHttpLink,
-  InMemoryCache,
-} from '@apollo/client';
+import { ApolloProvider } from '@apollo/client';
 import Router from 'next/router';
 import NProgress from 'nprogress';
 import '../components/styles/nprogress.css';
-
+import withData from '../lib/withData';
 import Header from '../components/Header';
 import { CartStateProvider } from '../lib/cartState';
-import { prodEndpoint } from '../config';
-
-const link = createHttpLink({
-  uri: prodEndpoint,
-  credentials: 'include',
-});
-
-const client = new ApolloClient({
-  cache: new InMemoryCache(),
-  link,
-});
 
 Router.events.on('routeChangeStart', () => NProgress.start());
 Router.events.on('routeChangeComplete', () => NProgress.done());
 Router.events.on('routeChangeError', () => NProgress.done());
 
 // eslint-disable-next-line react/prop-types
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps, apollo }) {
   return (
-    <ApolloProvider client={client}>
+    <ApolloProvider client={apollo}>
       <CartStateProvider>
         <Header />
         <Component {...pageProps} />{' '}
@@ -40,4 +24,4 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-export default MyApp;
+export default withData(MyApp);
